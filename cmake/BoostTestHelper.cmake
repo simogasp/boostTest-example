@@ -1,5 +1,5 @@
 #
-# Create a executable test from a source file. The associate executable has the same
+# Create an executable test from a source file. The associate executable has the same
 # name as the source file.
 #
 # Usage:
@@ -14,6 +14,11 @@
 # PREFIX is an optional string to append to the name of the test (e.g. the module name)
 #     For example if foo.cpp is passed as source, and "bar" as PREFIX the executable
 #     will be named named "bar_foo". Without PREFIX it will be just "foo"
+#
+# The function parses each test file and extract the BOOST_AUTO_TEST_SUITEs so
+# that each suite is run and visualised as a separated test. This means that no
+# BOOST_AUTO_TEST_CASE must be left outside the suite or it will not be run during make test
+#
 function(add_boost_test)
 
     set(options OPTIONS)
