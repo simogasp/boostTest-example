@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(ctest_example)
+project(ctest_example LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 
