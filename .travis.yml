@@ -1,0 +1,39 @@
+language: cpp
+dist: trusty
+sudo: false
+
+addons:
+  apt:
+    sources:
+      - llvm-toolchain-trusty
+      - ubuntu-toolchain-r-test
+    packages:
+      - clang-3.8
+      - libboost-test-dev
+
+
+matrix:
+  include:
+    - compiler: gcc
+      env: CXX_COMPILER=g++-4.8 C_COMPILER=gcc-4.8 TOOLSET=gcc
+    - compiler: gcc
+      env: CXX_COMPILER=g++-5 C_COMPILER=gcc-5 TOOLSET=gcc
+    - compiler: clang
+      env: CXX_COMPILER=clang++ C_COMPILER=clang TOOLSET=clang
+    - compiler: clang
+      env: CXX_COMPILER=clang++-3.8 C_COMPILER=clang-3.8 TOOLSET=clang
+
+
+env:
+  global:
+    - NUM_CPU="`grep processor /proc/cpuinfo | wc -l`"; echo $NUM_CPU
+    - PROJECT_BUILD="${TRAVIS_BUILD_DIR}/build"
+
+before_script:
+  - mkdir --parent $PROJECT_BUILD
+  - cd $PROJECT_BUILD
+  - cmake ..
+
+script:
+  - make -j 2 VERBOSE=1
+  - make test
