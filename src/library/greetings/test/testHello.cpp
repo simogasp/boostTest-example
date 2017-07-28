@@ -5,7 +5,7 @@
 
 #include <library/greetings/hello.h>
 
-BOOST_AUTO_TEST_SUITE( test_suite1 )
+BOOST_AUTO_TEST_SUITE( test_hello )
 
     BOOST_AUTO_TEST_CASE( test_case1 )
     {
@@ -19,7 +19,7 @@ BOOST_AUTO_TEST_SUITE( test_suite1 )
 
 BOOST_AUTO_TEST_SUITE_END()
 
-BOOST_AUTO_TEST_SUITE( test_suite2 )
+BOOST_AUTO_TEST_SUITE( test_helloWorld )
 
     BOOST_AUTO_TEST_CASE( test_case3 )
     {
