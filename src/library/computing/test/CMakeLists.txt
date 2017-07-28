@@ -1,0 +1,1 @@
+add_boost_test(SOURCE testMultiplication.cpp LINK computing PREFIX computing)
