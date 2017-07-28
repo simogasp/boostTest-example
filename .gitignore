@@ -33,3 +33,6 @@
 
 # Building directories
 *build*
+
+# IDE hidden directories
+.idea
