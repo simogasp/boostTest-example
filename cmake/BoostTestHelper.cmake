@@ -19,6 +19,8 @@
 # that each suite is run and visualised as a separated test. This means that no
 # BOOST_AUTO_TEST_CASE must be left outside the suite or it will not be run during make test
 #
+# Function based on https://eb2.co/blog/2015/06/driving-boost-dot-test-with-cmake/
+#
 function(add_boost_test)
 
     set(options OPTIONS)
@@ -36,8 +38,6 @@ function(add_boost_test)
 
     if(NOT ${param_PREFIX} STREQUAL "")
         set(TEST_EXECUTABLE_NAME "${param_PREFIX}_${TEST_EXECUTABLE_NAME}")
-#    else()
-#        message(STATUS "PREFIX not given")
     endif()
 
     add_executable(${TEST_EXECUTABLE_NAME} ${param_SOURCE})
