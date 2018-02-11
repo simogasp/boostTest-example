@@ -21,3 +21,8 @@ T multiply(const T& first, const T& second)
  */
 double computeInterest(double total, double ratio);
 
+/**
+ * @brief A function that throws an exception.
+ */
+void throwingFunction();
+
