@@ -59,7 +59,12 @@ Then you can run the tests
 ```bash
 make test
 ```
+
+Linux build CI (Travis): 
 [![Build Status](https://travis-ci.org/simogasp/boostTest-example.svg?branch=master)](https://travis-ci.org/simogasp/boostTest-example)
+
+Windows build CI (Windows):
+[![Build status](https://ci.appveyor.com/api/projects/status/78u6sldo0bmk48lm?svg=true)](https://ci.appveyor.com/project/simogasp/boosttest-example)
 
 ### License
 
