@@ -43,7 +43,9 @@ function(add_boost_test)
     add_executable(${TEST_EXECUTABLE_NAME} ${param_SOURCE})
 
     if(NOT ${param_INCLUDE} STREQUAL "")
-        target_include_directories(${TEST_EXECUTABLE_NAME} ${param_INCLUDE})
+        target_include_directories(${TEST_EXECUTABLE_NAME} PUBLIC ${param_INCLUDE} ${Boost_INCLUDE_DIRS})
+    else()
+        target_include_directories(${TEST_EXECUTABLE_NAME} PUBLIC ${Boost_INCLUDE_DIRS})
     endif()
 
     target_link_libraries(${TEST_EXECUTABLE_NAME}
